@@ -9,7 +9,10 @@ const app = express()
 
 // using middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ["https://vc-backend-1hox.onrender.com", "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "DELETE"]
+}))
 
 // importing userRoutes
 import userRoutes from './routes/userRoutes.js';
